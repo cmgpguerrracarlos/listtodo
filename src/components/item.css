@@ -1,0 +1,19 @@
+.item{
+    background-color: blue;
+    color: aliceblue;
+    padding: 10px 30px;
+    border:2px black solid;
+    margin: 5px;
+    width: 50%;
+    display: flex;
+}
+
+.button{
+    flex:1;
+    justify-self: end;
+}
+
+.name{
+    flex:1;
+    justify-self: start;
+}
