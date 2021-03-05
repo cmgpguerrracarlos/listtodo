@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './item.css'
 
 export default class Form extends Component {
 
@@ -17,11 +18,14 @@ export default class Form extends Component {
     onSubmitClick = (e)=>{
         e.preventDefault();
         this.props.onSub(this.state.value);
+        this.setState({
+            value:""
+        });
     }
     
     render() {
         return (
-            <div>
+            <div className="form">
                 <form onSubmit={this.onSubmitClick}>
                     <input type="text" name="name" value={this.state.value} onChange={this.handler}/>
                     <button type="submit">Add item</button>

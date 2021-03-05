@@ -10,10 +10,41 @@
 
 .button{
     flex:1;
-    justify-self: end;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .name{
-    flex:1;
-    justify-self: start;
+    flex:1.5;
+    justify-self: flex-start;
+    font-weight: bold;
+    font-size: large;
+    display: flex;
+}
+
+.form{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.form input{
+    border-color: blue;
+    height: 30px;
+    width: 500px;
+    font-size: large;
+}
+
+button{
+    font-weight: bold;
+    font-size: large;
+}
+
+.form button{
+    background-color: blue;
+    color:wheat;
+    height: 30px;
+    width: 150px;
+    margin-left: 20px;
+
 }
