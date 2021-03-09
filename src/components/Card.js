@@ -1,37 +1,36 @@
 import React, { Component } from 'react'
-import Item from './Item.js'
 import Form from './Form.js'
-import './card.css'
+import Items from './Items.js'
+import './Card.css'
 
 export default class Card extends Component {
     state = {
         data:[]
     }
 
-    componentDidMount(){
-        const d = ["Carlos","maria","Guerra"];
+    onSubmit = (id,val)=>{
+        console.log(val)
+        const d = [...this.state.data,{id,val}]
         this.setState({
             data:[...d]
         })
     }
 
-    onSubmit = (e)=>{
-        console.log(e)
-        const d = [...this.state.data,e]
-        this.setState({
-            data:[...d]
-        })
+    onDelete = (e)=>{
+        console.log(e);
+        const aux = [...this.state.data.filter((ele)=>{
+            return ele.id !== e;
+        })];
+        this.setState({data:aux})
+        
     }
 
     render() {
         return(
             <>
+            <h1>Welcome</h1>
             <Form onSub={this.onSubmit}/>
-            <div className="items">
-                {this.state.data.map((e)=>{
-                   return <Item name={e} key={e} />
-                })}
-            </div>
+            <Items data={this.state.data} onDelete={this.onDelete}/>
             </>
         
         )

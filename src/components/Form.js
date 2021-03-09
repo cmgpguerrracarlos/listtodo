@@ -5,20 +5,23 @@ export default class Form extends Component {
 
     constructor(props){
         super(props)
-        this.state = {value:''}
+        this.state = {id:0,value:''}
     }
 
 
     handler = (e)=>{
+        let id = Math.floor(Math.random()*10000);
         this.setState({
+            id,
             value:e.target.value
         })
     }
 
     onSubmitClick = (e)=>{
         e.preventDefault();
-        this.props.onSub(this.state.value);
+        this.props.onSub(this.state.id,this.state.value);
         this.setState({
+
             value:""
         });
     }
