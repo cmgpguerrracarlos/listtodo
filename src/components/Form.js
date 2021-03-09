@@ -21,7 +21,6 @@ export default class Form extends Component {
         e.preventDefault();
         this.props.onSub(this.state.id,this.state.value);
         this.setState({
-
             value:""
         });
     }

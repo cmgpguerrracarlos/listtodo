@@ -5,8 +5,10 @@ import './Card.css'
 
 export default class Card extends Component {
     state = {
-        data:[]
+        data:[],
+        obj:{id:0,name:""}
     }
+
 
     onSubmit = (id,val)=>{
         console.log(val)
@@ -23,13 +25,14 @@ export default class Card extends Component {
         })];
         this.setState({data:aux})
         
-    }
+    } 
+    
 
     render() {
         return(
             <>
             <h1>Welcome</h1>
-            <Form onSub={this.onSubmit}/>
+            <Form onSub={this.onSubmit} obj={this.state.obj}/>
             <Items data={this.state.data} onDelete={this.onDelete}/>
             </>
         
