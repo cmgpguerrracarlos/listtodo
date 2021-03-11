@@ -12,10 +12,13 @@ export default class Card extends Component {
 
     onSubmit = (id,val)=>{
         console.log(val)
-        const d = [...this.state.data,{id,val}]
+        if(val !== ""){
+            const d = [...this.state.data,{id,val}]
         this.setState({
             data:[...d]
         })
+        }
+        
     }
 
     onDelete = (e)=>{
